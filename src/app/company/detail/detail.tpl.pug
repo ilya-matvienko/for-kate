@@ -1,0 +1,13 @@
+button(type="button", (click)="back()") {{ 'Back' }}
+
+form([formGroup]="form")
+  p {{ 'ID company ' + (item.id || 'is missing') }}
+  input(type="text", formControlName="name", [value]="form.value.name", placeholder="Name Company")
+  input(type="text", formControlName="ceo", [value]="form.value.ceo", placeholder="CEO")
+  input(type="text", formControlName="phone", [value]="form.value.phone", placeholder="Phone")
+  input(type="text", formControlName="email", [value]="form.value.email", placeholder="Email")
+  input(type="text", formControlName="address", [value]="form.value.address", placeholder="Address")
+  input(type="text", formControlName="passport", [value]="form.value.passport", placeholder="Passport")
+
+  button(type="button", (click)="save()") {{ 'Save' }}
+

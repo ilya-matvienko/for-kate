@@ -1,0 +1,13 @@
+ng-container(*ngIf="select; then detailTemp; else listTemp")
+
+ng-template(#listTemp="")
+  list(
+    [list]="list",
+    (inited)="onLoad()",
+    (added)="addCompany()",
+    (searching)="onSearch($event)",
+    (selected)="onSelect($event)"
+  )
+
+ng-template(#detailTemp="")
+  detail([item]="select", (saved)="onSave($event)", (closed)="back()")
